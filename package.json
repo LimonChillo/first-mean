@@ -1,0 +1,26 @@
+{
+  "name": "mean",
+  "version": "1.0.0",
+  "description": "MEANingful project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RaketenWirt/first-mean.git"
+  },
+  "keywords": [
+    "mean"
+  ],
+  "author": "DK",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RaketenWirt/first-mean/issues"
+  },
+  "homepage": "https://github.com/RaketenWirt/first-mean",
+  "dependencies": {
+    "express": "^4.10.2",
+    "socket.io": "^1.3.5"
+  }
+}
