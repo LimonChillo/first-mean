@@ -1,4 +1,4 @@
-FROM iojs:latest
+FROM mhart/alpine-iojs:latest
 
 RUN mkdir -p /app
 WORKDIR /app
@@ -11,4 +11,4 @@ ENV NODE_ENV production
 
 EXPOSE 3000
 
-CMD ["node", "app/index.js"]
+CMD ["node", "index.js"]
