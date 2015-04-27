@@ -3,8 +3,18 @@
   "version": "1.0.0",
   "description": "MEANingful project",
   "main": "app/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0"
+  "scripts": { 
+    "test": "npm test",
+    "clean": "rm -rf ./dist",
+    "copy": "cp package.json ./dist/package.json && cp app/*.js ./dist && cp -R ./app/views ./dist",
+    "setup": "mkdir -p ./dist/public/scripts && mkdir -p ./dist/public/styles && npm run copy",
+    "watch:scripts": "watchify ./app/public/scripts/app.js -o ./dist/public/scripts/app.js",
+    "watch:styles": "watch ./app/public/styles ./dist/public/styles",
+    "watch": "npm run setup && npm run watch:scripts & npm run watch:styles",
+    "build:scripts": "browserify ./app/public/scripts/app.js -o ./dist/public/scripts/app.js",
+    "build:styles": "lessc ./app/public/styles/main.less ./dist/public/styles/main.css",
+    "build": "npm run clean && npm run setup && npm run build:scripts && npm run build:styles",
+    "start": "npm run watch"
   },
   "repository": {
     "type": "git",
