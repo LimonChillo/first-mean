@@ -6,14 +6,9 @@
   "scripts": { 
     "test": "echo \"Yeah, no test specified\" && exit 0",
     "clean": "rm -rf ./dist",
-    "copy": "cp package.json ./dist/package.json && cp app/*.js ./dist && cp -R ./app/views ./dist",
-    "setup": "mkdir -p ./dist/public/scripts && mkdir -p ./dist/public/styles && npm run copy",
-    "watch:scripts": "watchify ./app/public/scripts/app.js -o ./dist/public/scripts/app.js",
-    "watch:styles": "watch ./app/public/styles ./dist/public/styles",
-    "watch": "npm run setup && npm run watch:scripts & npm run watch:styles",
-    "build:scripts": "browserify ./app/public/scripts/app.js -o ./dist/public/scripts/app.js",
-    "build:styles": "lessc ./app/public/styles/main.less ./dist/public/styles/main.css",
-    "build": "npm run test",
+    "copy": "cp package.json ./dist/package.json && cp app/* ./dist/app",
+    "setup": "mkdir -p ./dist/app && npm run copy",
+    "build": "npm run clean && npm run setup",
     "start": "npm run watch"
   },
   "repository": {
